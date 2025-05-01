@@ -1,0 +1,50 @@
+{
+  "name": "react-changes-listener",
+  "version": "1.0.0",
+  "description": "A React utility component to listen for changes in a value.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/ChangesListener.tsx --format esm,cjs --dts --external react --sourcemap --clean",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "6.6.3",
+    "@testing-library/react": "16.3.0",
+    "@testing-library/react-hooks": "8.0.1",
+    "@testing-library/user-event": "14.6.1",
+    "@types/react": "18.3.20",
+    "@types/react-dom": "18.3.7",
+    "@vitejs/plugin-react": "4.4.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tsup": "8.3.5",
+    "typescript": "5.8.3",
+    "vitest": "3.1.2"
+  },
+  "keywords": [
+    "react",
+    "listener",
+    "changes",
+    "component",
+    "utility"
+  ],
+  "author": "Denis <MiskaMyasa> Zaitsev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Miskamyasa/react-changes-listener.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Miskamyasa/react-changes-listener/issues"
+  },
+  "homepage": "https://github.com/Miskamyasa/react-changes-listener"
+}

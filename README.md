@@ -31,7 +31,7 @@ The `ChangesListener` component is a utility for observing changes in a reactive
 
  ```typescript jsx
  import { useState } from 'react';
- import { ChangesListener } from './ChangesListener'; // Assuming your component is in this file
+ import { ChangesListener } from 'react-changes-listener'
 
  function MyComponent() {
    const [count, setCount] = useState(0);
@@ -57,7 +57,7 @@ The `ChangesListener` component is a utility for observing changes in a reactive
 
  ```typescript jsx
  import { useState } from 'react';
- import { ChangesListener } from './ChangesListener'; // Assuming your component is in this file
+ import { ChangesListener } from 'react-changes-listener'
 
  interface User {
    name: string;

@@ -23,9 +23,37 @@ The `ChangesListener` component is a utility for observing changes in a reactive
 3.  It optionally accepts a `field` prop. If provided and the value is an object, it will only track changes to the property specified by this field.
 4.  It utilizes the `usePrevious` hook to store the previous value.
 5.  In each render, it compares the current value (or the specific property if a `field` is provided) with the previous value.
-6.  If a change is detected, it calls the `listener` function during render, passing the new value (or the new value of the specific property).
+6.  If a change is detected, it calls the `listener` function in an effect after the render commit, passing the new value (or the new value of the specific property).
+
+**Design Rationale:**
+
+*   The listener runs in an effect to keep side effects out of the render phase.
+*   This avoids StrictMode double-calls that can happen when doing work in render.
+*   Running after commit is safer for side-effectful callbacks (logging, analytics, network calls) and still keeps the component renderless.
+*   The `field` prop only applies to object values; omit it when watching primitives.
 
 **Example Usage:**
+
+**Watching for changes in a primitive value:**
+
+ ```typescript jsx
+ import { useState } from 'react';
+ import { ChangesListener } from 'react-changes-listener'
+
+ function Counter() {
+   const [count, setCount] = useState(0);
+
+   return (
+     <>
+       <button onClick={() => setCount(c => c + 1)}>Increment</button>
+       <ChangesListener
+         useValue={() => count}
+         listener={(newCount) => console.log('Count changed to', newCount)}
+       />
+     </>
+   );
+ }
+ ```
 
 **Watching for changes in a state value:**
 

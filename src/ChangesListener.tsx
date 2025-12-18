@@ -12,11 +12,11 @@ export function usePrevious<T>(value: T): T {
     return storedValue.current;
 }
 
-type Listener<T, K> = (value: T extends object ? (K extends keyof T ? T[K] : T) : T) => void
+type Listener<T, K extends keyof T | undefined> = (value: K extends keyof T ? T[K] : T) => void
 
 export interface ChangesListenerProps<
     T,
-    K extends keyof T = T extends object ? keyof T : never,
+    K extends keyof T | undefined = undefined,
 > {
     useValue: () => T;
     listener: Listener<T, K>;
@@ -42,7 +42,7 @@ export interface ChangesListenerProps<
  */
 export function ChangesListener<
     T,
-    K extends keyof T = T extends object ? keyof T : never,
+    K extends keyof T | undefined = undefined,
 >(props: ChangesListenerProps<T, K>) {
     const { useValue, listener, field } = props;
 
@@ -50,16 +50,17 @@ export function ChangesListener<
 
     // Determine the value to watch: if a key is provided and res is an object, watch the property, otherwise watch the whole value.
     const current =
-        typeof field !== "undefined" && typeof res === "object" && res !== null
+        typeof field !== 'undefined' && typeof res === 'object' && res !== null
             ? res[field]
             : res;
 
     const prev = usePrevious<typeof current>(current);
 
-
-    if ( prev !== current) {
-        listener(current as Parameters<Listener<T, K>>[0]);
-    }
+    useEffect(() => {
+        if (prev !== current) {
+            listener(current as Parameters<Listener<T, K>>[0]);
+        }
+    }, [current, listener, prev]);
 
     return null;
 }

@@ -1,6 +1,6 @@
 {
   "name": "react-changes-listener",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "A React utility component to listen for changes in a value.",
   "main": "./dist/index.js",

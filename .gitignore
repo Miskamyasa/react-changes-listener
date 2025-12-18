@@ -6,6 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
+pnpm-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -134,3 +135,52 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Operating System
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor & IDE
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Package Managers
+.yarn/*
+!.yarn/releases
+
+# Build & Distribution
+/dist/
+/build/
+/lib/
+/lib-types/
+
+# Cache & Temporary
+.mf
+.rollup.cache
+tsconfig.tsbuildinfo
+*.tmp
+*.temp
+
+# Environment & Config
+.env.*
+!.env.example
+
+# Web Server
+.htaccess
+
+# AI
+AGENTS.md

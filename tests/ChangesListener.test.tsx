@@ -1,8 +1,7 @@
 import React, {act, useState} from 'react';
 import { describe, it, expect, vi } from 'vitest';
-import { render } from '@testing-library/react';
+import { render, renderHook } from '@testing-library/react';
 import { ChangesListener } from '../src/ChangesListener';
-import { renderHook } from '@testing-library/react-hooks';
 
 // A simple hook for testing purposes
 function useTestValue(initialValue: number) {

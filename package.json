@@ -6,6 +6,7 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -16,6 +17,9 @@
   "scripts": {
     "build": "tsup src/ChangesListener.tsx --format esm,cjs --dts --external react --sourcemap --clean",
     "test": "vitest"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
   },
   "devDependencies": {
     "@testing-library/dom": "10.4.1",

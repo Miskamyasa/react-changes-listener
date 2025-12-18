@@ -5,7 +5,7 @@ The `ChangesListener` component is a utility for observing changes in a reactive
 **Key Features:**
 
 *   **Change Detection:** It efficiently detects changes in the value returned by the `useValue` hook.
-*   **Targeted Listening (Optional):** For object types, you can specify a `key` prop to listen for changes in a specific property instead of the entire object.
+*   **Targeted Listening (Optional):** For object types, you can specify a `field` prop to listen for changes in a specific property instead of the entire object.
 *   **Non-Rendering:** It doesn't add any extra nodes to your component tree.
 *   **Clear Separation of Concerns:** It isolates the logic for reacting to value changes, promoting cleaner and more maintainable components.
 
@@ -20,10 +20,10 @@ The `ChangesListener` component is a utility for observing changes in a reactive
 
 1.  It accepts a `useValue` prop, which should be a function (typically a custom hook) that returns the reactive value you want to observe.
 2.  It uses the provided `useValue` hook to get the current value.
-3.  It optionally accepts a `key` prop. If provided and the value is an object, it will only track changes to the property specified by this key.
+3.  It optionally accepts a `field` prop. If provided and the value is an object, it will only track changes to the property specified by this field.
 4.  It utilizes the `usePrevious` hook to store the previous value.
-5.  In each render, it compares the current value (or the specific property if a `key` is provided) with the previous value.
-6.  If a change is detected, it calls the `listener` function, passing the new value (or the new value of the specific property).
+5.  In each render, it compares the current value (or the specific property if a `field` is provided) with the previous value.
+6.  If a change is detected, it calls the `listener` function during render, passing the new value (or the new value of the specific property).
 
 **Example Usage:**
 
@@ -79,7 +79,7 @@ The `ChangesListener` component is a utility for observing changes in a reactive
        <p>Name: {user.name}</p>
        <p>Age: {user.age}</p>
        <button onClick={() => setUser(prev => ({ ...prev, name: 'Bob' }))}>Change Name</button>
-       <ChangesListener<User> listener={handleNameChange} useValue={useCurrentUser} key="name" />
+       <ChangesListener<User> listener={handleNameChange} useValue={useCurrentUser} field="name" />
      </div>
    );
  }

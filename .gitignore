@@ -181,6 +181,3 @@ tsconfig.tsbuildinfo
 
 # Web Server
 .htaccess
-
-# AI
-AGENTS.md

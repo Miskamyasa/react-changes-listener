@@ -1,6 +1,6 @@
 {
   "name": "react-changes-listener",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "description": "A React utility component to listen for changes in a value.",
   "main": "./dist/index.js",
@@ -28,12 +28,12 @@
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "6.0.1",
-    "jsdom": "28.1.0",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
+    "jsdom": "29.0.2",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
     "tsup": "8.5.1",
     "typescript": "5.9.3",
-    "vitest": "4.1.0"
+    "vitest": "4.1.4"
   },
   "keywords": [
     "react",
@@ -51,5 +51,8 @@
   "bugs": {
     "url": "https://github.com/Miskamyasa/react-changes-listener/issues"
   },
-  "homepage": "https://github.com/Miskamyasa/react-changes-listener"
+  "homepage": "https://github.com/Miskamyasa/react-changes-listener",
+  "dependencies": {
+    "vite": "8.0.8"
+  }
 }

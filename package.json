@@ -1,6 +1,6 @@
 {
   "name": "react-changes-listener",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "description": "A React utility component to listen for changes in a value.",
   "main": "./dist/index.js",
@@ -18,22 +18,23 @@
     "build": "tsup src/ChangesListener.tsx --format esm,cjs --dts --external react --sourcemap --clean",
     "test": "vitest"
   },
+  "packageManager": "pnpm@11.20.0",
   "peerDependencies": {
     "react": ">=16.8.0"
   },
   "devDependencies": {
     "@testing-library/dom": "10.4.1",
     "@testing-library/react": "16.3.2",
-    "@testing-library/user-event": "14.6.1",
-    "@types/react": "19.2.14",
-    "@types/react-dom": "19.2.3",
-    "@vitejs/plugin-react": "6.0.1",
-    "jsdom": "29.0.2",
-    "react": "19.2.5",
-    "react-dom": "19.2.5",
+    "@testing-library/user-event": "14.6.5",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "@vitejs/plugin-react": "6.1.0",
+    "jsdom": "30.0.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
     "tsup": "8.5.1",
     "typescript": "5.9.3",
-    "vitest": "4.1.4"
+    "vitest": "4.1.11"
   },
   "keywords": [
     "react",
@@ -51,8 +52,5 @@
   "bugs": {
     "url": "https://github.com/Miskamyasa/react-changes-listener/issues"
   },
-  "homepage": "https://github.com/Miskamyasa/react-changes-listener",
-  "dependencies": {
-    "vite": "8.0.8"
-  }
+  "homepage": "https://github.com/Miskamyasa/react-changes-listener"
 }

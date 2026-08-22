@@ -1,0 +1,21 @@
+allowBuilds:
+  esbuild: true
+
+minimumReleaseAgeExclude:
+  - yaml@2.8.3
+  - esbuild@0.28.1
+
+onlyBuiltDependencies:
+  - esbuild
+
+overrides:
+  yaml@>=2.0.0 <2.8.3: ^2.8.3
+
+packages:
+  - .
+
+shellEmulator: true
+
+storeDir: ${PNPM_STORE_DIR:-.pnpm-store}
+
+updateNotifier: false

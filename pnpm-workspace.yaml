@@ -4,11 +4,14 @@ allowBuilds:
 minimumReleaseAgeExclude:
   - yaml@2.8.3
   - esbuild@0.28.1
+  - undici@8.10.2
+  - source-map-js@1.2.2
 
 onlyBuiltDependencies:
   - esbuild
 
 overrides:
+  esbuild@>=0.27.3 <0.28.1: ^0.28.1
   yaml@>=2.0.0 <2.8.3: ^2.8.3
 
 packages:
